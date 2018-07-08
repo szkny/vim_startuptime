@@ -152,7 +152,7 @@ class VimPerformance():
             self.df[column].hist(bins=100, alpha=0.5, normed=True)
             self.df[column].plot(kind='kde', style='r--')
             KeyEvent()
-            plt.title('start-up time (%s)' % column)
+            plt.title('%s start-up time (total: %7.1f msec)' % (self.vim, self.df['total time'].mean()))
             plt.xlabel('msec')
             plt.show()
         else:
@@ -171,7 +171,7 @@ class VimPerformance():
             for column in self.ls:
                 self.df[column].plot(label=column)
             KeyEvent()
-            plt.title('%s start-up time' % self.vim)
+            plt.title('%s start-up time (total: %7.1f msec)' % (self.vim, self.df['total time'].mean()))
             plt.xlabel('No.')
             plt.ylabel('msec')
             plt.legend(bbox_to_anchor=(1.00, 0.9, 0.5, .100), ncol=3, fontsize=5)
