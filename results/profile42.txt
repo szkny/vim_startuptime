@@ -1,0 +1,131 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.015  000.015: --- NVIM STARTING ---
+001.042  001.027: locale set
+002.049  001.007: inits 1
+002.071  000.023: window checked
+002.602  000.531: parsing arguments
+002.605  000.003: expanding arguments
+002.741  000.136: inits 2
+003.108  000.368: init highlight
+005.859  002.262  002.262: sourcing /Users/suzukisohei/.config/nvim/autoload/plug.vim
+013.857  000.094  000.094: sourcing /Users/suzukisohei/.config/nvim/plugged/requirements.txt.vim/ftdetect/requirements.vim
+047.738  000.125  000.125: sourcing /Users/suzukisohei/.config/nvim/plugged/neosnippet.vim/ftdetect/neosnippet.vim
+048.145  000.168  000.168: sourcing /Users/suzukisohei/.config/nvim/plugged/vimshell.vim/ftdetect/vimshrc.vim
+048.387  000.082  000.082: sourcing /Users/suzukisohei/.config/nvim/plugged/ultisnips/ftdetect/snippets.vim
+048.823  000.240  000.240: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-toml/ftdetect/toml.vim
+049.089  033.344  032.730: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/filetype.vim
+049.492  000.062  000.062: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/ftplugin.vim
+049.874  000.060  000.060: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/indent.vim
+050.996  000.284  000.284: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syncolor.vim
+051.198  000.792  000.508: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/synload.vim
+051.268  001.184  000.392: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syntax.vim
+051.613  000.037  000.037: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/filetype.vim
+051.950  000.020  000.020: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/ftplugin.vim
+052.281  000.023  000.023: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/indent.vim
+053.145  000.416  000.416: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/nosyntax.vim
+053.969  000.245  000.245: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syncolor.vim
+054.185  000.738  000.493: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/synload.vim
+054.247  001.613  000.458: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syntax.vim
+055.238  000.231  000.231: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syncolor.vim
+056.344  000.215  000.215: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syncolor.vim
+057.303  000.227  000.227: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syncolor.vim
+057.909  000.211  000.211: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/syntax/syncolor.vim
+058.613  003.086  002.432: sourcing /Users/suzukisohei/.config/nvim/plugged/molokai/colors/molokai.vim
+060.660  000.662  000.662: sourcing /Users/suzukisohei/.config/nvim/vimrc/functions.vim
+070.253  009.498  009.498: sourcing /Users/suzukisohei/.config/nvim/vimrc/mapping.vim
+071.234  000.842  000.842: sourcing /Users/suzukisohei/.config/nvim/vimrc/plugin_setting.vim
+071.621  068.238  015.218: sourcing /Users/suzukisohei/.config/nvim/init.vim
+071.646  000.299: sourcing vimrc file(s)
+072.262  000.155  000.155: sourcing /Users/suzukisohei/.config/nvim/plugged/deoplete.nvim/autoload/deoplete.vim
+072.671  000.271  000.271: sourcing /Users/suzukisohei/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/init.vim
+072.866  000.872  000.446: sourcing /Users/suzukisohei/.config/nvim/plugged/deoplete.nvim/plugin/deoplete.vim
+073.861  000.479  000.479: sourcing /Users/suzukisohei/.config/nvim/plugged/ale/autoload/ale/completion.vim
+074.510  000.134  000.134: sourcing /Users/suzukisohei/.config/nvim/plugged/ale/autoload/ale/events.vim
+074.927  001.853  001.239: sourcing /Users/suzukisohei/.config/nvim/plugged/ale/plugin/ale.vim
+077.640  002.496  002.496: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+078.012  000.140  000.140: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-trailing-whitespace/plugin/trailing-whitespace.vim
+079.433  000.528  000.528: sourcing /Users/suzukisohei/.config/nvim/plugged/delimitMate/autoload/delimitMate.vim
+082.673  004.454  003.926: sourcing /Users/suzukisohei/.config/nvim/plugged/delimitMate/plugin/delimitMate.vim
+084.110  001.200  001.200: sourcing /Users/suzukisohei/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+084.567  000.060  000.060: sourcing /Users/suzukisohei/.config/nvim/plugged/tcomment_vim/autoload/tcomment/deprecated.vim
+088.470  004.136  004.076: sourcing /Users/suzukisohei/.config/nvim/plugged/tcomment_vim/plugin/tcomment.vim
+089.158  000.207  000.207: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline.vim
+089.577  000.159  000.159: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/init.vim
+090.238  000.128  000.128: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/parts.vim
+091.257  002.532  002.038: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/plugin/airline.vim
+091.524  000.033  000.033: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline-themes/plugin/airline-themes.vim
+091.951  000.204  000.204: sourcing /Users/suzukisohei/.config/nvim/plugged/ranger.vim/plugin/ranger.vim
+092.285  000.110  000.110: sourcing /Users/suzukisohei/.config/nvim/plugged/bclose.vim/plugin/bclose.vim
+092.711  000.203  000.203: sourcing /Users/suzukisohei/.config/nvim/plugged/neosnippet.vim/plugin/neosnippet.vim
+093.180  000.238  000.238: sourcing /Users/suzukisohei/.config/nvim/plugged/previm/plugin/previm.vim
+094.497  001.102  001.102: sourcing /Users/suzukisohei/.fzf/plugin/fzf.vim
+095.953  001.222  001.222: sourcing /Users/suzukisohei/.config/nvim/plugged/fzf.vim/plugin/fzf.vim
+096.277  000.091  000.091: sourcing /Users/suzukisohei/.config/nvim/plugged/vimproc.vim/plugin/vimproc.vim
+096.608  000.053  000.053: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-misc/plugin/xolox/misc.vim
+097.080  000.024  000.024: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-misc/autoload/xolox/misc.vim
+097.799  000.080  000.080: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-misc/autoload/xolox/misc/cursorhold.vim
+098.009  001.184  001.080: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-session/plugin/session.vim
+098.788  000.560  000.560: sourcing /Users/suzukisohei/.config/nvim/plugged/vimshell.vim/plugin/vimshell.vim
+099.787  000.125  000.125: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/autoload/provider/pythonx.vim
+100.423  000.268  000.268: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/autoload/remote/host.vim
+100.595  001.242  000.849: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/autoload/provider/python3.vim
+101.152  000.118  000.118: sourcing /Users/suzukisohei/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim
+101.305  002.293  000.934: sourcing /Users/suzukisohei/.config/nvim/plugged/ultisnips/plugin/UltiSnips.vim
+101.580  000.050  000.050: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-snippets/plugin/vimsnippets.vim
+101.931  000.088  000.088: sourcing /Users/suzukisohei/.config/nvim/plugged/jedi-vim/plugin/jedi.vim
+102.762  000.028  000.028: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/gui_shim.vim
+103.583  000.724  000.724: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/gzip.vim
+103.770  000.057  000.057: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/health.vim
+104.020  000.160  000.160: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/man.vim
+104.857  000.747  000.747: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/matchit.vim
+105.218  000.247  000.247: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/matchparen.vim
+106.074  000.747  000.747: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/netrwPlugin.vim
+107.247  000.273  000.273: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/autoload/remote/define.vim
+107.404  000.865  000.592: sourcing /Users/suzukisohei/.local/share/nvim/rplugin.vim
+107.434  001.224  000.359: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/rplugin.vim
+107.584  000.031  000.031: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/rrhelper.vim
+107.899  000.198  000.198: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/shada.vim
+108.062  000.044  000.044: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/spellfile.vim
+108.428  000.253  000.253: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/tarPlugin.vim
+108.679  000.135  000.135: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/tohtml.vim
+108.828  000.036  000.036: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/tutor.vim
+109.246  000.307  000.307: sourcing /usr/local/Cellar/neovim/0.2.2/share/nvim/runtime/plugin/zipPlugin.vim
+109.277  007.581: loading plugins
+109.437  000.160: loading packages
+109.858  000.155  000.155: sourcing /Users/suzukisohei/.config/nvim/plugged/ultisnips/after/plugin/UltiSnips_after.vim
+109.925  000.334: loading after plugins
+109.946  000.020: inits 3
+115.672  005.726: reading ShaDa
+118.808  003.136: clearing screen
+121.714  000.412  000.412: sourcing /Users/suzukisohei/.config/nvim/plugged/ale/autoload/ale.vim
+122.692  000.360  000.360: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions.vim
+123.034  000.091  000.091: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/quickfix.vim
+123.379  000.074  000.074: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/netrw.vim
+123.810  000.108  000.108: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tagbar.vim
+124.237  000.155  000.155: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/util.vim
+124.635  000.113  000.113: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/ale.vim
+125.272  000.186  000.186: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim
+125.815  000.072  000.072: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/po.vim
+126.257  000.208  000.208: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline.vim
+126.569  000.085  000.085: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim
+127.083  000.141  000.141: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs.vim
+127.663  000.240  000.240: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim
+128.132  000.047  000.047: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/keymap.vim
+132.997  000.111  000.111: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/section.vim
+133.587  000.279  000.279: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/highlighter.vim
+135.741  000.095  000.095: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/themes.vim
+136.485  001.072  000.977: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline-themes/autoload/airline/themes/kalisi.vim
+148.615  000.248  000.248: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/builder.vim
+149.236  000.147  000.147: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/default.vim
+178.141  055.183: opening buffers
+178.412  000.088  000.088: sourcing /Users/suzukisohei/.config/nvim/plugged/ale/autoload/ale/pattern_options.vim
+182.581  004.352: BufEnter autocommands
+182.586  000.005: editing files in windows
+182.948  000.094  000.094: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buflist.vim
+184.587  001.374  001.374: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-session/autoload/xolox/session.vim
+185.239  000.325  000.325: sourcing /Users/suzukisohei/.config/nvim/plugged/vim-misc/autoload/xolox/misc/option.vim
