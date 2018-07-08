@@ -41,10 +41,13 @@ nvim start-up time (20 loops) : 190.505 +/- 16.163 [msec]
 ## screenshots
 
 - pie graph
+
 ![images0](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_0.png)
 
 - line graph
+
 ![images1](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_1.png)
 
 - histogram
+
 ![images2](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_2.png)
