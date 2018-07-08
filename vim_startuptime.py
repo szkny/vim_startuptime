@@ -20,7 +20,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 def main():
     obj = VimPerformance(vim='nvim')
     obj.measure(10)
-    obj.aggregate()
+    obj.aggregate(status=True)
     obj.pie()
     # obj.plot()
     # obj.hist()
@@ -195,7 +195,7 @@ class VimPerformance():
                     counterclock=False,
                     startangle=90)
         KeyEvent()
-        plt.title('%s start-up time' % self.vim)
+        plt.title('%s start-up time (total: %7.1f msec)' % (self.vim, self.df['total time'].mean()))
         plt.show()
 
     def __canvas_set(self):
