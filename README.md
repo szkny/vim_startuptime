@@ -37,4 +37,4 @@ nvim start-up time (20 loops) : 190.505 +/- 16.163 [msec]
         sourcing UltiSnips.vim                    2.627 +/- 1.118
                 ...                                    ...
 ```
-![vim_startuptime images](https://github.com/szkny/vim_startuptime/wiki/images/vim_startuptime.png)
+![vim_startuptime images](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time.png)
