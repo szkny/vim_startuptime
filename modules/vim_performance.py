@@ -66,7 +66,7 @@ class VimPerformance():
         os.system(command)
         self.outputs += [output]
 
-    def aggregate(self, outputs=None, status=False):
+    def aggregate(self, outputs=None, status=True):
         """
         aggregate start-up time from profile.txt
         """
