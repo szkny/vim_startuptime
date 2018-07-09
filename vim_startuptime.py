@@ -21,5 +21,5 @@ if __name__ == '__main__':
     obj = VimPerformance(vim='nvim')
     obj.measure(10)
     obj.status()
-    # VimPerformance::plot's param: kind='pie'(default) or 'hist' or 'line'
+    # plot's param: kind='pie'(default) or 'hist' or 'line'
     obj.plot(kind='pie')
