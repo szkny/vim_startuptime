@@ -10,6 +10,7 @@ import os
 import re
 import pandas as pd
 from glob import glob
+from tqdm import tqdm
 import matplotlib.pyplot as plt
 from modules.keyevent import KeyEvent
 # from multiprocessing import Process, Lock
@@ -35,7 +36,7 @@ class VimPerformance():
 
     def measure(self, nloop=1, output_dir='./results'):
         print('measuring %s start-up time..' % self.vim)
-        for i in range(nloop):
+        for i in tqdm(range(nloop)):
             self.__measure(output_dir)
 
     def __measure(self, output_dir='./results'):
@@ -62,7 +63,7 @@ class VimPerformance():
                     operator += 1
                 filenum += 1
                 output = output[:-5 - operator] + '%d.txt' % filenum
-        command = self.vim + ' --startuptime %s -c "q"' % output
+        command = self.vim + ' --startuptime %s -c "q" >/dev/null' % output
         os.system(command)
         self.outputs += [output]
 

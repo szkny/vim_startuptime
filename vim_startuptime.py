@@ -11,6 +11,11 @@ import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
+## ToDo:
+# - cache cleaner
+# - debug
+
+
 if __name__ == '__main__':
     # VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
     obj = VimPerformance(vim='nvim')
