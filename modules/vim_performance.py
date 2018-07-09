@@ -160,7 +160,7 @@ class VimPerformance():
         else:
             print('[warning] no such column: ' + column)
 
-    def plot(self, kind=None, **kwargs):
+    def plot(self, kind='pie', **kwargs):
         if kind == 'pie':
             self.pie(**kwargs)
         elif kind == 'hist':
