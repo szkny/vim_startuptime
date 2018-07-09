@@ -12,7 +12,9 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
 if __name__ == '__main__':
+    # VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
     obj = VimPerformance(vim='nvim')
     obj.measure(10)
     obj.status()
-    obj.plot(kind='pie')  # kind='pie'(default) or 'hist' or 'line'
+    # VimPerformance::plot's param: kind='pie'(default) or 'hist' or 'line'
+    obj.plot(kind='pie')
