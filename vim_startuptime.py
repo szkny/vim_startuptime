@@ -13,8 +13,8 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 if __name__ == '__main__':
     obj = VimPerformance(vim='nvim')
-    obj.measure(10)
-    obj.aggregate()
-    obj.pie()
-    # obj.plot()
+    # obj.measure(100)
+    # obj.aggregate()
+    # obj.pie()
+    obj.plot(kind='hist')
     # obj.hist()

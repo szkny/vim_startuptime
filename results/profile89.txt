@@ -1,0 +1,130 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.032  000.032: --- NVIM STARTING ---
+000.925  000.893: locale set
+002.267  001.342: inits 1
+002.297  000.030: window checked
+002.556  000.259: parsing arguments
+003.166  000.610: expanding arguments
+003.318  000.152: inits 2
+004.081  000.763: init highlight
+007.831  002.947  002.947: sourcing /home/suzuki/.config/nvim/autoload/plug.vim
+019.142  000.166  000.166: sourcing /home/suzuki/.config/nvim/plugged/requirements.txt.vim/ftdetect/requirements.vim
+034.936  000.117  000.117: sourcing /home/suzuki/.config/nvim/plugged/neosnippet.vim/ftdetect/neosnippet.vim
+035.577  000.104  000.104: sourcing /home/suzuki/.config/nvim/plugged/vimshell.vim/ftdetect/vimshrc.vim
+035.925  000.088  000.088: sourcing /home/suzuki/.config/nvim/plugged/ultisnips/ftdetect/snippets.vim
+036.468  000.117  000.117: sourcing /home/suzuki/.config/nvim/plugged/vim-toml/ftdetect/toml.vim
+037.114  014.030  013.604: sourcing /usr/share/nvim/runtime/filetype.vim
+038.619  000.142  000.142: sourcing /usr/share/nvim/runtime/ftplugin.vim
+040.061  000.125  000.125: sourcing /usr/share/nvim/runtime/indent.vim
+043.424  000.344  000.344: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+043.860  001.989  001.645: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+043.957  003.569  001.580: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+045.206  000.056  000.056: sourcing /usr/share/nvim/runtime/filetype.vim
+046.595  000.053  000.053: sourcing /usr/share/nvim/runtime/ftplugin.vim
+047.959  000.064  000.064: sourcing /usr/share/nvim/runtime/indent.vim
+063.368  000.302  000.302: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+066.546  000.413  000.413: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+067.000  002.228  001.815: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+067.128  004.248  001.718: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+069.230  000.294  000.294: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+073.245  000.551  000.551: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+075.935  000.326  000.326: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+077.911  000.287  000.287: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+079.052  008.434  007.270: sourcing /home/suzuki/.config/nvim/plugged/molokai/colors/molokai.vim
+083.937  001.014  001.014: sourcing /home/suzuki/.config/nvim/vimrc/functions.vim
+097.977  013.883  013.883: sourcing /home/suzuki/.config/nvim/vimrc/mapping.vim
+113.065  014.821  014.821: sourcing /home/suzuki/.config/nvim/vimrc/plugin_setting.vim
+114.662  110.150  046.304: sourcing /home/suzuki/.config/nvim/init.vim
+114.755  000.524: sourcing vimrc file(s)
+116.378  000.244  000.244: sourcing /home/suzuki/.config/nvim/plugged/deoplete.nvim/autoload/deoplete.vim
+117.008  000.435  000.435: sourcing /home/suzuki/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/init.vim
+117.113  001.352  000.673: sourcing /home/suzuki/.config/nvim/plugged/deoplete.nvim/plugin/deoplete.vim
+118.700  000.739  000.739: sourcing /home/suzuki/.config/nvim/plugged/ale/autoload/ale/completion.vim
+119.825  000.249  000.249: sourcing /home/suzuki/.config/nvim/plugged/ale/autoload/ale/events.vim
+120.059  002.590  001.602: sourcing /home/suzuki/.config/nvim/plugged/ale/plugin/ale.vim
+124.289  003.791  003.791: sourcing /home/suzuki/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+124.985  000.286  000.286: sourcing /home/suzuki/.config/nvim/plugged/vim-trailing-whitespace/plugin/trailing-whitespace.vim
+126.835  000.645  000.645: sourcing /home/suzuki/.config/nvim/plugged/delimitMate/autoload/delimitMate.vim
+129.566  004.227  003.582: sourcing /home/suzuki/.config/nvim/plugged/delimitMate/plugin/delimitMate.vim
+131.022  001.067  001.067: sourcing /home/suzuki/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+132.086  000.155  000.155: sourcing /home/suzuki/.config/nvim/plugged/tcomment_vim/autoload/tcomment/deprecated.vim
+137.210  005.794  005.639: sourcing /home/suzuki/.config/nvim/plugged/tcomment_vim/plugin/tcomment.vim
+138.957  000.322  000.322: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline.vim
+139.805  000.267  000.267: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/init.vim
+140.738  000.196  000.196: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/parts.vim
+141.649  003.740  002.955: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/plugin/airline.vim
+142.182  000.107  000.107: sourcing /home/suzuki/.config/nvim/plugged/vim-airline-themes/plugin/airline-themes.vim
+142.907  000.318  000.318: sourcing /home/suzuki/.config/nvim/plugged/ranger.vim/plugin/ranger.vim
+143.439  000.184  000.184: sourcing /home/suzuki/.config/nvim/plugged/bclose.vim/plugin/bclose.vim
+144.126  000.278  000.278: sourcing /home/suzuki/.config/nvim/plugged/neosnippet.vim/plugin/neosnippet.vim
+144.740  000.184  000.184: sourcing /home/suzuki/.config/nvim/plugged/previm/plugin/previm.vim
+147.307  002.261  002.261: sourcing /home/suzuki/.fzf/plugin/fzf.vim
+149.136  001.423  001.423: sourcing /home/suzuki/.config/nvim/plugged/fzf.vim/plugin/fzf.vim
+149.793  000.196  000.196: sourcing /home/suzuki/.config/nvim/plugged/vimproc.vim/plugin/vimproc.vim
+150.664  000.143  000.143: sourcing /home/suzuki/.config/nvim/plugged/vim-misc/plugin/xolox/misc.vim
+151.938  000.083  000.083: sourcing /home/suzuki/.config/nvim/plugged/vim-misc/autoload/xolox/misc.vim
+153.193  000.151  000.151: sourcing /home/suzuki/.config/nvim/plugged/vim-misc/autoload/xolox/misc/cursorhold.vim
+153.497  002.486  002.252: sourcing /home/suzuki/.config/nvim/plugged/vim-session/plugin/session.vim
+154.769  000.859  000.859: sourcing /home/suzuki/.config/nvim/plugged/vimshell.vim/plugin/vimshell.vim
+157.880  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/provider/pythonx.vim
+159.427  000.350  000.350: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+159.592  003.100  002.573: sourcing /usr/share/nvim/runtime/autoload/provider/python3.vim
+160.751  000.202  000.202: sourcing /home/suzuki/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim
+160.926  005.714  002.412: sourcing /home/suzuki/.config/nvim/plugged/ultisnips/plugin/UltiSnips.vim
+161.379  000.102  000.102: sourcing /home/suzuki/.config/nvim/plugged/vim-snippets/plugin/vimsnippets.vim
+162.105  000.163  000.163: sourcing /home/suzuki/.config/nvim/plugged/jedi-vim/plugin/jedi.vim
+163.743  000.061  000.061: sourcing /usr/share/nvim/runtime/plugin/gui_shim.vim
+164.116  000.267  000.267: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+164.321  000.091  000.091: sourcing /usr/share/nvim/runtime/plugin/health.vim
+164.574  000.139  000.139: sourcing /usr/share/nvim/runtime/plugin/man.vim
+165.889  001.188  001.188: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+166.421  000.395  000.395: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+167.304  000.765  000.765: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+169.623  000.382  000.382: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+169.799  001.961  001.579: sourcing /home/suzuki/.local/share/nvim/rplugin.vim
+169.848  002.415  000.454: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+170.033  000.071  000.071: sourcing /usr/share/nvim/runtime/plugin/rrhelper.vim
+170.342  000.199  000.199: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+170.599  000.116  000.116: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+170.973  000.256  000.256: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+171.357  000.254  000.254: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+171.583  000.107  000.107: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+172.029  000.279  000.279: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+172.058  013.435: loading plugins
+172.582  000.524: loading packages
+173.426  000.209  000.209: sourcing /home/suzuki/.config/nvim/plugged/ultisnips/after/plugin/UltiSnips_after.vim
+173.613  000.822: loading after plugins
+173.640  000.027: inits 3
+181.111  007.471: reading ShaDa
+183.948  002.837: clearing screen
+187.539  000.361  000.361: sourcing /home/suzuki/.config/nvim/plugged/ale/autoload/ale.vim
+188.771  000.537  000.537: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions.vim
+189.383  000.150  000.150: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/quickfix.vim
+190.000  000.132  000.132: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/netrw.vim
+190.688  000.169  000.169: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tagbar.vim
+191.402  000.213  000.213: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/util.vim
+192.088  000.190  000.190: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/ale.vim
+192.906  000.291  000.291: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim
+195.290  000.634  000.634: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline.vim
+196.437  000.260  000.260: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim
+197.862  000.412  000.412: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs.vim
+199.240  000.445  000.445: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim
+200.234  000.135  000.135: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/keymap.vim
+210.071  000.179  000.179: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/section.vim
+211.015  000.402  000.402: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/highlighter.vim
+213.537  000.174  000.174: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/themes.vim
+214.189  001.344  001.170: sourcing /home/suzuki/.config/nvim/plugged/vim-airline-themes/autoload/airline/themes/kalisi.vim
+226.431  000.371  000.371: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/builder.vim
+227.316  000.212  000.212: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/default.vim
+249.819  059.434: opening buffers
+250.425  000.219  000.219: sourcing /home/suzuki/.config/nvim/plugged/ale/autoload/ale/pattern_options.vim
+254.017  003.979: BufEnter autocommands
+254.024  000.007: editing files in windows
+254.752  000.167  000.167: sourcing /home/suzuki/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buflist.vim
+256.917  001.335  001.335: sourcing /home/suzuki/.config/nvim/plugged/vim-session/autoload/xolox/session.vim
+257.921  000.222  000.222: sourcing /home/suzuki/.config/nvim/plugged/vim-misc/autoload/xolox/misc/option.vim

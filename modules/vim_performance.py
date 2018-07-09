@@ -36,7 +36,7 @@ class VimPerformance():
     def measure(self, nloop=1, output_dir='./results'):
         print('measuring %s start-up time..' % self.vim)
         for i in range(nloop):
-            self.__measure()
+            self.__measure(output_dir)
 
     def __measure(self, output_dir='./results'):
         """
@@ -124,9 +124,8 @@ class VimPerformance():
 
     def status(self):
         if len(self.ls) == 0:
-            print('[warning] process is empty.'
-                  ' you shold run VimPerformance.aggregate().')
-            return
+            """ case of measuring data empty. running VimPerformance.aggregate() """
+            self.aggregate(status=False)
         print('{EDITOR} start-up time ({FILE_NUMBER} loops) :'
               ' {AVE:.3f} +/- {STD:.3f} [msec]'.format(
                   EDITOR=self.vim,
@@ -148,6 +147,9 @@ class VimPerformance():
         return self.ls
 
     def hist(self, column='total time'):
+        if column not in self.ls:
+            """ case of measuring data empty. running VimPerformance.aggregate() """
+            self.aggregate(status=False)
         if column in self.ls:
             self.df[column].hist(bins=100, alpha=0.5, normed=True)
             self.df[column].plot(kind='kde', style='r--')
@@ -165,9 +167,8 @@ class VimPerformance():
             self.hist(**kwargs)
         else:
             if len(self.ls) == 0:
-                print('[warning] process is empty.'
-                      ' you shold run VimPerformance.aggregate().')
-                return
+                """ case of measuring data empty. running VimPerformance.aggregate() """
+                self.aggregate(status=False)
             for column in self.ls:
                 self.df[column].plot(label=column)
             KeyEvent()
@@ -179,9 +180,8 @@ class VimPerformance():
 
     def pie(self, number=7):
         if len(self.ls) == 0:
-            print('[warning] process is empty.'
-                  ' you shold run VimPerformance.aggregate().')
-            return
+            """ case of measuring data empty. running VimPerformance.aggregate() """
+            self.aggregate(status=False)
         tmp_df = self.df_ave[1:number]
         tmp_df['others'] = self.df_ave[number + 1:].sum()
         tmp_df.plot(kind='pie',
