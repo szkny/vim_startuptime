@@ -4,7 +4,7 @@
 Created on Sun Jul 8th 09:52:54 2018
     @file  : vim_performance.py
     @author: Suzuki
-    @brief : vim startup time analyzer.
+    @brief : utility class for vim startup time analyzer.
 """
 import os
 import re
@@ -12,8 +12,11 @@ import pandas as pd
 from glob import glob
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-from modules.keyevent import KeyEvent
-# from multiprocessing import Process, Lock
+from prettytable import PrettyTable
+try:
+    from modules.keyevent import KeyEvent
+except ModuleNotFoundError:
+    from keyevent import KeyEvent
 
 
 class VimPerformance():
@@ -38,6 +41,7 @@ class VimPerformance():
         print('measuring %s start-up time..' % self.vim)
         for i in tqdm(range(nloop)):
             self.__measure(output_dir)
+        self.status()
 
     def __measure(self, output_dir='./results'):
         """
@@ -125,8 +129,10 @@ class VimPerformance():
 
     def status(self):
         if len(self.ls) == 0:
-            """ case of measuring data empty. running VimPerformance.aggregate() """
+            """ case of measuring data empty. """
             self.aggregate(status=False)
+            if len(self.ls) == 0:
+                return
         print('{EDITOR} start-up time ({FILE_NUMBER} loops) :'
               ' {AVE:.3f} +/- {STD:.3f} [msec]'.format(
                   EDITOR=self.vim,
@@ -134,18 +140,26 @@ class VimPerformance():
                   AVE=self.df['total time'].mean(),
                   STD=self.df['total time'].std())
               )
-        print('\t--- PROCESS ---')
-        for k in self.df_ave.keys():
-            if k == 'total time':
+        table = PrettyTable(['PROCESS', 'TIME'])
+        for process_name in self.df_ave.keys():
+            if process_name == 'total time':
                 continue
-            print('\t{KEY:<35s}\t{VALUE:7.3f} +/- {STD:<7.3f}'.format(
-                KEY=k,
-                VALUE=self.df_ave[k],
-                STD=self.df[k].std()))
+            value = '%7.3f +/- %.3f' \
+                    % (self.df_ave[process_name], self.df[process_name].std())
+            table.add_row([process_name, value])
+        print(table)
 
     def list(self):
         self.ls = list(self.df.keys())
         return self.ls
+
+    def clean(self):
+        file_list = glob('./results/*.txt')
+        if len(file_list) > 0:
+            path = os.path.dirname(file_list[0])
+            print('clean caches in "%s"' % path)
+            for _file in file_list:
+                os.remove(_file)
 
     def hist(self, column='total time'):
         if column not in self.ls:
@@ -204,3 +218,12 @@ class VimPerformance():
         sub.patch.set_alpha(1)
         sub.set_axisbelow(True)
         plt.style.use('ggplot')
+
+
+if __name__ == '__main__':
+    # VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
+    obj = VimPerformance(vim='nvim')
+    obj.measure(1)
+    obj.status()
+    # plot's param: kind='pie'(default) or 'hist' or 'line'
+    obj.plot(kind='pie')

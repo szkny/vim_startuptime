@@ -12,15 +12,17 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
 ## ToDo:
-# - cache cleaner
-# - debug
-# - prettytable -> status
+# - debug (see issue)
+# - prettytable -> status table
 
 
 if __name__ == '__main__':
-    # VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
+    """ VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
+    """
     obj = VimPerformance(vim='nvim')
-    obj.measure(10)
+    obj.clean()
+    obj.measure(100)
     obj.status()
-    # plot's param: kind='pie'(default) or 'hist' or 'line'
-    obj.plot(kind='pie')
+    """ plot's param: kind='pie'(default) or 'hist' or 'line'
+    """
+    obj.plot(kind='hist')
