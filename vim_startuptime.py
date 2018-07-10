@@ -13,7 +13,6 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 ## ToDo:
 # - debug (see issue)
-# - prettytable -> status table
 
 
 if __name__ == '__main__':
