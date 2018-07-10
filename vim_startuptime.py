@@ -14,6 +14,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 ## ToDo:
 # - cache cleaner
 # - debug
+# - prettytable -> status
 
 
 if __name__ == '__main__':
