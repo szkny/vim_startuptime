@@ -23,4 +23,4 @@ if __name__ == '__main__':
     obj.measure(100)
     """ plot's param: kind='pie'(default) or 'hist' or 'line'
     """
-    obj.plot(kind='hist')
+    obj.plot(kind='pie')
