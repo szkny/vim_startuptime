@@ -14,8 +14,8 @@ $ unzip vim_startuptime.zip
 
 ## install
 
-Change directory where "requirements.txt" (or Pipfile) executable exists.  
-You should install prequirement ython modules by pip or pipenv command.  
+Change directory where "requirements.txt" (or "Pipfile") executable exists.  
+You should install requirement python modules by "pip" or "pipenv" command.  
 
 - pip
 
