@@ -8,14 +8,31 @@ $ git clone https://github.com/szkny/vim_startuptime.git
 ```
 Or download zip file.  
 ```bash:bash
-$ cd [Path to "vim_startuptime.zip"]
+$ cd [Path to directory "vim_startuptime.zip" exists]
 $ unzip vim_startuptime.zip
 ```
 
+## install
+
+Change directory where "requirements.txt" (or Pipfile) executable exists.  
+You should install prequirement ython modules by pip or pipenv command.  
+
+- pip
+
+```bash
+$ pip install -r requirements.txt
+```
+
+- pipenv
+
+```bash
+$ pipenv install
+```
+
 ## usage
-Go to directory where "vim_startuptime" executable exists.  
-Then, execute vim_startuptime.
-```bash:bash
+Change to directory where "vim_startuptime.py" python code exists.  
+Then, execute python script.  
+```bash
 $ python ./vim_startuptime.py
 
 nvim start-up time (100 loops) : 268.656 +/- 31.010 [msec]
@@ -38,6 +55,11 @@ nvim start-up time (100 loops) : 268.656 +/- 31.010 [msec]
 |       sourcing synload.vim       |   4.567 +/- 0.997  |
 |      BufEnter autocommands       |   4.487 +/- 1.094  |
               ...                            ...
+```
+
+if you have installed by pipenv, you should run like this.  
+```bash
+$ pipenv run python ./vim_startuptime.py
 ```
 
 ## screenshots
