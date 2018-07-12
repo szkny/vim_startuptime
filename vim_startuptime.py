@@ -17,11 +17,13 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
 if __name__ == '__main__':
+    Argv = sys.argv[1:]
     """ VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
     """
     obj = VimPerformance(vim='nvim')
-    obj.clean()
-    obj.measure(10, vim_args=sys.argv[1:len(sys.argv)])
+    # obj.clean()
+    # obj.measure(100, vim_args=Argv)
+    obj.status()
     """ plot's param: kind='pie'(default) or 'hist' or 'line'
     """
-    obj.plot(kind='pie')
+    # obj.plot(kind='hist')

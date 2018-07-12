@@ -35,29 +35,25 @@ Then, execute python script.
 ```bash
 $ python ./vim_startuptime.py
 
-nvim start-up time (100 loops) : 268.656 +/- 31.010 [msec]
-+----------------------------------+--------------------+
-|             PROCESS              |        TIME        |
-+----------------------------------+--------------------+
-|        sourcing init.vim         | 111.597 +/- 13.402 |
-|         opening buffers          |  61.385 +/- 7.794  |
-|   sourcing plugin_setting.vim    |  14.665 +/- 1.162  |
-|         loading plugins          |  14.335 +/- 1.847  |
-|       sourcing mapping.vim       |  14.171 +/- 1.170  |
-|      sourcing filetype.vim       |  12.952 +/- 3.027  |
-|          reading ShaDa           |   9.660 +/- 1.229  |
-|       sourcing syntax.vim        |   8.218 +/- 1.770  |
-|       sourcing molokai.vim       |   8.210 +/- 1.464  |
-|      sourcing UltiSnips.vim      |   6.525 +/- 1.289  |
-|     sourcing delimitMate.vim     |   5.887 +/- 1.555  |
-|       sourcing rplugin.vim       |   4.836 +/- 0.890  |
-|      sourcing tcomment.vim       |   4.647 +/- 1.120  |
-|       sourcing synload.vim       |   4.567 +/- 0.997  |
-|      BufEnter autocommands       |   4.487 +/- 1.094  |
-              ...                            ...
+nvim start-up time (300 loops) : 190.694 +/- 30.688 [msec]
++--------------------------+--------------------+
+|         PROCESS          |        TIME        |
++--------------------------+--------------------+
+|    sourcing init.vim     |  71.734 +/- 10.502 |
+|     opening buffers      |  53.516 +/- 10.600 |
+|  sourcing filetype.vim   |  32.099 +/- 3.639  |
+|   sourcing mapping.vim   |  10.838 +/- 3.203  |
+|     loading plugins      |   8.382 +/- 3.786  |
+|      reading ShaDa       |   6.517 +/- 1.056  |
+| sourcing delimitMate.vim |   5.395 +/- 1.019  |
+|  BufEnter autocommands   |   4.798 +/- 1.142  |
+|  sourcing tcomment.vim   |   4.318 +/- 0.899  |
+|   sourcing molokai.vim   |   3.346 +/- 0.627  |
+|           ...            |        ...         |
++--------------------------+--------------------+
 ```
 
-if you have installed by pipenv, you should run like this.  
+Otherwise, if you have installed by pipenv, you could run like this,  
 ```bash
 $ pipenv run python ./vim_startuptime.py
 ```

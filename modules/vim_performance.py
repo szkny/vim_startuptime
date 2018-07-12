@@ -139,7 +139,7 @@ class VimPerformance():
         if status is True:
             self.status()
 
-    def status(self):
+    def status(self, table_head=10):
         if len(self.ls) == 0:
             """ case of measuring data empty. """
             self.aggregate(status=False)
@@ -155,12 +155,17 @@ class VimPerformance():
         if self.vim_args != '':
             print('(%s args : %s)' % (self.vim, self.vim_args))
         table = PrettyTable(['PROCESS', 'TIME'])
+        counter = 0
         for process_name in self.df_ave.keys():
             if process_name == 'total time':
                 continue
             value = '%7.3f +/- %.3f' \
                     % (self.df_ave[process_name], self.df[process_name].std())
             table.add_row([process_name, value])
+            counter += 1
+            if counter == table_head:
+                break
+        table.add_row(['...', '...'])
         print(table)
 
     def list(self):
