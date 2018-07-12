@@ -243,9 +243,6 @@ class VimPerformance():
 
 
 if __name__ == '__main__':
-    # VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
-    obj = VimPerformance(vim='nvim')
-    obj.measure(1)
-    obj.status()
-    # plot's param: kind='pie'(default) or 'hist' or 'line'
+    obj = VimPerformance()
+    obj.measure(10)
     obj.plot(kind='pie')
