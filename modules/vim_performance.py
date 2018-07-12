@@ -31,6 +31,7 @@ class VimPerformance():
                 vim = 'vim'
         self.vim = vim
         self.outputs = []
+        self.output_dir = './results'
         self.__canvas_set()
         self.process_time = {}
         self.df = None
@@ -48,12 +49,13 @@ class VimPerformance():
         measure startup time of vim.
         and create profile.txt into "output_dir"
         """
-        if not os.path.exists(output_dir):
-            os.mkdir(output_dir)
-        if output_dir[-1] == '/':
-            output = output_dir + 'profile1.txt'
+        self.output_dir = output_dir
+        if not os.path.exists(self.output_dir):
+            os.mkdir(self.output_dir)
+        if self.output_dir[-1] == '/':
+            output = self.output_dir + 'profile1.txt'
         else:
-            output = output_dir + '/profile1.txt'
+            output = self.output_dir + '/profile1.txt'
         while os.path.exists(output):
             if output[-4:] == '.txt':
                 filenum = 0
@@ -74,6 +76,7 @@ class VimPerformance():
     def aggregate(self, outputs=None, status=True):
         """
         aggregate start-up time from profile.txt
+        data store into self.df and self.df_ave
         """
         print('aggregating %s start-up time..' % self.vim)
         if outputs is None:
@@ -154,10 +157,14 @@ class VimPerformance():
         return self.ls
 
     def clean(self):
-        file_list = glob('./results/*.txt')
+        if self.output_dir[-1] == '/':
+            expression = self.output_dir + 'profile*.txt'
+        else:
+            expression = self.output_dir + '/profile*.txt'
+        file_list = glob(expression)
         if len(file_list) > 0:
             path = os.path.dirname(file_list[0])
-            print('clean caches in "%s"' % path)
+            print('cleaning caches in "%s" ..' % path)
             for _file in file_list:
                 os.remove(_file)
 
