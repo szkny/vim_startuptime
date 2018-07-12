@@ -62,12 +62,12 @@ $ pipenv run python ./vim_startuptime.py
 
 - pie graph
 
-![images0](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_0.png)
+![images_pie](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_pie.png)
 
 - line graph
 
-![images1](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_1.png)
+![images_line](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_line.png)
 
 - histogram
 
-![images2](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_2.png)
+![images_hist](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_hist.png)

@@ -89,7 +89,9 @@ class VimPerformance():
                 print('[warning] output file is not found.'
                       ' you shold run VimPerformance.measure() at first.')
                 return
-        elif type(outputs) is not list:
+        elif type(outputs) is list:
+            self.outputs = outputs
+        elif type(outputs) is str:
             self.outputs = [outputs]
         self.process_time = {}
         for _file in self.outputs:
@@ -219,7 +221,7 @@ class VimPerformance():
                 1.00, 0.9, 0.5, .100), ncol=3, fontsize=5)
             plt.show()
 
-    def pie(self, number=7):
+    def pie(self, number=10):
         if len(self.ls) == 0:
             """ case of measuring data empty. running VimPerformance.aggregate() """
             self.aggregate(status=False)
@@ -230,6 +232,8 @@ class VimPerformance():
                     pctdistance=0.7,
                     counterclock=False,
                     startangle=90)
+        plt.xlabel('')
+        plt.ylabel('')
         KeyEvent()
         plt.title('%s start-up time (total: %7.1f msec)' %
                   (self.vim, self.df['total time'].mean()))
@@ -240,6 +244,7 @@ class VimPerformance():
         fig.canvas.set_window_title('vim start-up time')
         fig.patch.set_facecolor("white")
         fig.patch.set_alpha(1)
+        fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95)
         sub = fig.add_subplot(111)
         sub.patch.set_facecolor("white")
         sub.patch.set_alpha(1)
@@ -249,5 +254,6 @@ class VimPerformance():
 
 if __name__ == '__main__':
     obj = VimPerformance()
-    obj.measure(10)
+    # obj.measure(10)
+    obj.aggregate(outputs=glob('../results/*.txt'))
     obj.plot(kind='pie')
