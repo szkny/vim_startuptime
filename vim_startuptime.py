@@ -21,9 +21,8 @@ if __name__ == '__main__':
     """ VimPerformance's param: vim='vim'(default) or if $EDITOR (environment variable) exists, use it.
     """
     obj = VimPerformance(vim='nvim')
-    # obj.clean()
-    # obj.measure(100, vim_args=Argv)
-    obj.status()
+    obj.clean()
+    obj.measure(100, vim_args=Argv)
     """ plot's param: kind='pie'(default) or 'hist' or 'line'
     """
-    # obj.plot(kind='hist')
+    obj.plot(kind='hist')
