@@ -30,6 +30,7 @@ class VimPerformance():
             if vim is None:
                 vim = 'vim'
         self.vim = vim
+        self.vim_args = ''
         self.outputs = []
         self.output_dir = './results'
         self.__canvas_set()
@@ -38,38 +39,41 @@ class VimPerformance():
         self.df_ave = None
         self.ls = []
 
-    def measure(self, nloop=1, output_dir='./results'):
+    def parse_vimargs(self, vim_args):
+        if vim_args is not None:
+            if type(vim_args) is list:
+                self.vim_args = ' '.join(vim_args)
+            if type(vim_args) is str:
+                self.vim_args = vim_args
+        return self.vim_args
+
+    def measure(self, nloop=1, output_dir='./results', vim_args=None):
         print('measuring %s start-up time..' % self.vim)
+        self.output_dir = output_dir
+        self.parse_vimargs(vim_args)
         for i in tqdm(range(nloop)):
-            self.__measure(output_dir)
+            self.__measure()
         self.status()
 
-    def __measure(self, output_dir='./results'):
+    def __measure(self):
         """
         measure startup time of vim.
         and create profile.txt into "output_dir"
         """
-        self.output_dir = output_dir
         if not os.path.exists(self.output_dir):
             os.mkdir(self.output_dir)
-        if self.output_dir[-1] == '/':
-            output = self.output_dir + 'profile1.txt'
-        else:
-            output = self.output_dir + '/profile1.txt'
+        if self.output_dir[-1] != '/':
+            output_dir = self.output_dir + '/'
+        number = 1
+        output = output_dir + 'profile%d.txt' % number
         while os.path.exists(output):
-            if output[-4:] == '.txt':
-                filenum = 0
-                operator = 0
-                while 1:
-                    try:
-                        filenum = int(output[-5 - operator:-4])
-                    except ValueError:
-                        operator -= 1
-                        break
-                    operator += 1
-                filenum += 1
-                output = output[:-5 - operator] + '%d.txt' % filenum
-        command = self.vim + ' --startuptime %s -c "q" >/dev/null' % output
+            number += 1
+            output = output_dir + 'profile%d.txt' % number
+        command = self.vim + \
+            ' {VIM_ARGS} --startuptime {OUTPUT} -c "quitall!" >/dev/null'.format(
+                VIM_ARGS=self.vim_args,
+                OUTPUT=output
+            )
         os.system(command)
         self.outputs += [output]
 
@@ -99,7 +103,8 @@ class VimPerformance():
                         if length >= 2:
                             process_name = ' '.join(line.split()[length:])
                             if line.split()[length] == 'sourcing':
-                                process_name = 'sourcing ' + os.path.basename(process_name)
+                                process_name = 'sourcing ' + \
+                                    os.path.basename(process_name)
                             ### count same process ###
                             if process_name in process_count.keys():
                                 process_count[process_name] += 1
@@ -108,17 +113,21 @@ class VimPerformance():
                             ### aggregate process time ###
                             if process_name in self.process_time.keys():
                                 if process_count[process_name] == 1:
-                                    self.process_time[process_name] += [float(readtime[1])]
+                                    self.process_time[process_name] += [
+                                        float(readtime[1])]
                                 elif process_count[process_name] >= 2:
-                                    self.process_time[process_name][-1] += float(readtime[1])
+                                    self.process_time[process_name][-1] += float(
+                                        readtime[1])
                             else:
-                                self.process_time.update({process_name: [float(readtime[1])]})
+                                self.process_time.update(
+                                    {process_name: [float(readtime[1])]})
                             cumulative_time = float(readtime[0])
                     ### append to list of total start-up time ###
                     if 'total time' in self.process_time.keys():
                         self.process_time['total time'] += [cumulative_time]
                     else:
-                        self.process_time.update({'total time': [cumulative_time]})
+                        self.process_time.update(
+                            {'total time': [cumulative_time]})
             else:
                 print('[warning] file not found: ' + _file)
         ### convert to pandas DataFrame & sort ###
@@ -143,6 +152,8 @@ class VimPerformance():
                   AVE=self.df['total time'].mean(),
                   STD=self.df['total time'].std())
               )
+        if self.vim_args != '':
+            print('(%s args : %s)' % (self.vim, self.vim_args))
         table = PrettyTable(['PROCESS', 'TIME'])
         for process_name in self.df_ave.keys():
             if process_name == 'total time':
@@ -176,7 +187,8 @@ class VimPerformance():
             self.df[column].hist(bins=100, alpha=0.5, normed=True)
             self.df[column].plot(kind='kde', style='r--')
             KeyEvent()
-            plt.title('%s start-up time (total: %7.1f msec)' % (self.vim, self.df['total time'].mean()))
+            plt.title('%s start-up time (total: %7.1f msec)' %
+                      (self.vim, self.df['total time'].mean()))
             plt.xlabel('msec')
             plt.show()
         else:
@@ -194,10 +206,12 @@ class VimPerformance():
             for column in self.ls:
                 self.df[column].plot(label=column)
             KeyEvent()
-            plt.title('%s start-up time (total: %7.1f msec)' % (self.vim, self.df['total time'].mean()))
+            plt.title('%s start-up time (total: %7.1f msec)' %
+                      (self.vim, self.df['total time'].mean()))
             plt.xlabel('No.')
             plt.ylabel('msec')
-            plt.legend(bbox_to_anchor=(1.00, 0.9, 0.5, .100), ncol=3, fontsize=5)
+            plt.legend(bbox_to_anchor=(
+                1.00, 0.9, 0.5, .100), ncol=3, fontsize=5)
             plt.show()
 
     def pie(self, number=7):
@@ -212,7 +226,8 @@ class VimPerformance():
                     counterclock=False,
                     startangle=90)
         KeyEvent()
-        plt.title('%s start-up time (total: %7.1f msec)' % (self.vim, self.df['total time'].mean()))
+        plt.title('%s start-up time (total: %7.1f msec)' %
+                  (self.vim, self.df['total time'].mean()))
         plt.show()
 
     def __canvas_set(self):
