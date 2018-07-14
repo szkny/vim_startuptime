@@ -221,7 +221,7 @@ class VimPerformance():
                 1.00, 0.9, 0.5, .100), ncol=3, fontsize=5)
             plt.show()
 
-    def pie(self, number=10):
+    def pie(self, number=7):
         if len(self.ls) == 0:
             """ case of measuring data empty. running VimPerformance.aggregate() """
             self.aggregate(status=False)
@@ -244,7 +244,7 @@ class VimPerformance():
         fig.canvas.set_window_title('vim start-up time')
         fig.patch.set_facecolor("white")
         fig.patch.set_alpha(1)
-        fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95)
+        fig.subplots_adjust(left=0.10, bottom=0.05, right=0.90, top=0.95)
         sub = fig.add_subplot(111)
         sub.patch.set_facecolor("white")
         sub.patch.set_alpha(1)

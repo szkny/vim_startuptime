@@ -26,4 +26,4 @@ if __name__ == '__main__':
     obj.measure(100, vim_args=Argv)
     """ plot's param: kind='pie'(default) or 'hist' or 'line'
     """
-    obj.plot(kind='hist')
+    obj.plot(kind='pie')
