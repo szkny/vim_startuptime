@@ -181,10 +181,8 @@ class VimPerformance():
             expression = self.output_dir + '/profile*.txt'
         file_list = glob(expression)
         if len(file_list) > 0:
-            path = os.path.dirname(file_list[0])
-            print('cleaning caches in "%s" ..' % path)
-            for _file in file_list:
-                os.remove(_file)
+            print('cleaning caches in "%s" ..' % self.output_dir)
+            os.system('rm ' + expression)
 
     def hist(self, column='total time'):
         if column not in self.ls:
