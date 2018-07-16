@@ -252,6 +252,6 @@ class VimPerformance():
 
 if __name__ == '__main__':
     obj = VimPerformance()
-    # obj.measure(10)
+    obj.measure(nloop=10, output_dir='../results')
     obj.aggregate(outputs=glob('../results/*.txt'))
     obj.plot(kind='pie')
