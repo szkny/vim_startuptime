@@ -1,6 +1,7 @@
 !.gitignore
-**__pycache__/**
+__pycache__/
+*.py[cod]
 !.gitkeep
 results/*.txt
 Pipfile.lock
-.swp
+*.swp
