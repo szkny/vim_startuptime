@@ -13,7 +13,7 @@ import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
-## ToDo:
+# ToDo:
 # - debug (see issue)
 
 
@@ -23,4 +23,4 @@ if __name__ == '__main__':
     obj.clean()
     obj.measure(10, vim_args=argv[1:])
     # plot's param: kind='pie'(default) or 'hist' or 'line'
-    obj.plot(kind='pie')
+    # obj.plot(kind='pie')

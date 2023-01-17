@@ -57,17 +57,3 @@ Otherwise, if you have installed by pipenv, you could run like this,
 ```bash
 $ pipenv run python ./vim_startuptime.py
 ```
-
-## screenshots
-
-- pie graph
-
-![images_pie](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_pie.png)
-
-- line graph
-
-![images_line](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_line.png)
-
-- histogram
-
-![images_hist](https://github.com/szkny/vim_startuptime/wiki/images/vim_start-up_time_hist.png)

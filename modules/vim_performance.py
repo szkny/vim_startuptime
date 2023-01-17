@@ -11,12 +11,7 @@ import re
 import pandas as pd
 from glob import glob
 from tqdm import tqdm
-import matplotlib.pyplot as plt
 from prettytable import PrettyTable
-try:
-    from modules.keyevent import KeyEvent
-except ModuleNotFoundError:
-    from keyevent import KeyEvent
 
 
 class VimPerformance():
@@ -33,7 +28,6 @@ class VimPerformance():
         self.vim_args = ''
         self.outputs = []
         self.output_dir = './results'
-        self.__canvas_set()
         self.process_time = {}
         self.df = None
         self.df_ave = None
@@ -70,7 +64,8 @@ class VimPerformance():
             number += 1
             output = output_dir + 'profile%d.txt' % number
         command = self.vim + \
-            ' {VIM_ARGS} --startuptime {OUTPUT} -c "quitall!" >/dev/null'.format(
+            ' {VIM_ARGS} --startuptime {OUTPUT} -c "quitall!" >/dev/null' \
+            .format(
                 VIM_ARGS=self.vim_args,
                 OUTPUT=output
             )
@@ -98,7 +93,7 @@ class VimPerformance():
             process_count = {}
             if os.path.exists(_file):
                 with open(_file, encoding='utf-8') as f:
-                    ### load file 'profile*.txt ###
+                    # load file 'profile*.txt
                     for line in f.readlines():
                         readtime = re.findall('[0-9.e]{7}', line)
                         length = len(readtime)
@@ -107,12 +102,12 @@ class VimPerformance():
                             if line.split()[length] == 'sourcing':
                                 process_name = 'sourcing ' + \
                                     os.path.basename(process_name)
-                            ### count same process ###
+                            # count same process
                             if process_name in process_count.keys():
                                 process_count[process_name] += 1
                             else:
                                 process_count.update({process_name: 1})
-                            ### aggregate process time ###
+                            # aggregate process time
                             if process_name in self.process_time.keys():
                                 if process_count[process_name] == 1:
                                     self.process_time[process_name] += [
@@ -124,7 +119,7 @@ class VimPerformance():
                                 self.process_time.update(
                                     {process_name: [float(readtime[1])]})
                             cumulative_time = float(readtime[0])
-                    ### append to list of total start-up time ###
+                    # append to list of total start-up time
                     if 'total time' in self.process_time.keys():
                         self.process_time['total time'] += [cumulative_time]
                     else:
@@ -132,7 +127,7 @@ class VimPerformance():
                             {'total time': [cumulative_time]})
             else:
                 print('[warning] file not found: ' + _file)
-        ### convert to pandas DataFrame & sort ###
+        # convert to pandas DataFrame & sort
         self.df = pd.DataFrame()
         for column in self.process_time.keys():
             self.df[column] = self.process_time[column]
@@ -184,74 +179,8 @@ class VimPerformance():
             print('cleaning caches in "%s" ..' % self.output_dir)
             os.system('rm ' + expression)
 
-    def hist(self, column='total time'):
-        if column not in self.ls:
-            """ case of measuring data empty. running VimPerformance.aggregate() """
-            self.aggregate(status=False)
-        if column in self.ls:
-            self.df[column].hist(bins=100, alpha=0.5, normed=True)
-            self.df[column].plot(kind='kde', style='r--')
-            KeyEvent()
-            plt.title('%s start-up time (total: %7.1f msec)' %
-                      (self.vim, self.df['total time'].mean()))
-            plt.xlabel('msec')
-            plt.show()
-        else:
-            print('[warning] no such column: ' + column)
-
-    def plot(self, kind='pie', **kwargs):
-        if kind == 'pie':
-            self.pie(**kwargs)
-        elif kind == 'hist':
-            self.hist(**kwargs)
-        else:
-            if len(self.ls) == 0:
-                """ case of measuring data empty. running VimPerformance.aggregate() """
-                self.aggregate(status=False)
-            for column in self.ls:
-                self.df[column].plot(label=column)
-            KeyEvent()
-            plt.title('%s start-up time (total: %7.1f msec)' %
-                      (self.vim, self.df['total time'].mean()))
-            plt.xlabel('No.')
-            plt.ylabel('msec')
-            plt.legend(bbox_to_anchor=(
-                1.00, 0.9, 0.5, .100), ncol=3, fontsize=5)
-            plt.show()
-
-    def pie(self, number=7):
-        if len(self.ls) == 0:
-            """ case of measuring data empty. running VimPerformance.aggregate() """
-            self.aggregate(status=False)
-        tmp_df = self.df_ave[1:number]
-        tmp_df['others'] = self.df_ave[number + 1:].sum()
-        tmp_df.plot(kind='pie',
-                    autopct="%1.1f%%",
-                    pctdistance=0.7,
-                    counterclock=False,
-                    startangle=90)
-        plt.xlabel('')
-        plt.ylabel('')
-        KeyEvent()
-        plt.title('%s start-up time (total: %7.1f msec)' %
-                  (self.vim, self.df['total time'].mean()))
-        plt.show()
-
-    def __canvas_set(self):
-        fig = plt.figure(figsize=(7, 5))
-        fig.canvas.set_window_title('vim start-up time')
-        fig.patch.set_facecolor("white")
-        fig.patch.set_alpha(1)
-        fig.subplots_adjust(left=0.10, bottom=0.05, right=0.90, top=0.95)
-        sub = fig.add_subplot(111)
-        sub.patch.set_facecolor("white")
-        sub.patch.set_alpha(1)
-        sub.set_axisbelow(True)
-        plt.style.use('ggplot')
-
 
 if __name__ == '__main__':
     obj = VimPerformance()
     obj.measure(nloop=10, output_dir='../results')
     obj.aggregate(outputs=glob('../results/*.txt'))
-    obj.plot(kind='pie')
